@@ -9,16 +9,16 @@
 <body>
     <div class="container">
         <h1>My Calculator</h1>
-        <a href="./calculator.html"><button>CALCULATOR</button></a>
-        <a href="./dummycalc.html"><button>DUMMY CALC</button></a>
-        <a href="./tooDummyCalc.html"><button>TOO DUMMY CALC</button></a>
-        <div class="">
-            <div>
-                <h1 id="displayArea"></h1>
-            </div>
+        <div class="display">
+            <!-- <h2 id="displayTwo"></h2> -->
+            <h1 id="displayArea"></h1>
         </div>
+        <!-- <div class="panel">
+            <input type="text" name="" id="">
+            <input type="text" name="" id="">
+        </div> -->
         <div class="panel">
-            <input id="reset" type="button" value="AC">
+            <input id="reset" type="reset" value="AC">
             <input id="percentage" class="operatorBtn" type="button" value="%">
             <input id="divide" class="operatorBtn" type="button" value="/">
             <input id="backBtn" type="button" value="&#8678;">
@@ -43,107 +43,10 @@
         </div>
         <div class="panel">
             <input id="zero" class="numBtn" type="button" value="0">
-            <input id="dot" type="button" value=".">
+            <input id="dot" class="numBtn" type="button" value=".">
             <input id="equals" type="button" value="=">
         </div>
     </div>
-    <script>
-        const display = document.querySelector('#displayArea')
-        // console.log(plus);
-        
-        //Storing all Num Inputs in numBtns
-        // console.log(numBtns);
-        
-        //Looping through all the items of numBtns
-        // and returning their value onclick
-        console.log(display)
-        
-        const operatorBtns = document.querySelectorAll('.operatorBtn');
-        // for(let i=0; i<operatorBtns.length; i++) {
-        // operatorBtns[i].addEventListener('click', getFirstInput());
-        // }
-        
-        
-        let numBtnValue;
-        display.textContent = '';
-        
-        const numBtns = document.querySelectorAll('.numBtn');
-        function setNumBtnValues() {
-            for(let i=0; i<numBtns.length; i++) {
-                numBtnValue = parseInt(numBtns[i].value);
-                numBtns[i].addEventListener('click', fillDisplayBox = () => {
-                    display.textContent += numBtns[i].value;
-                })
-                console.log(numBtnValue);
-                // return numBtnValue;
-            }
-
-
-            
-
-            // let firstNum = '';
-            // function getFirstInput() {
-            //     firstNum += (numBtnValue.toString());
-            //     console.log(firstNum)
-            // } getFirstInput()
-            
-        } setNumBtnValues()  //calling a function
-
-        let firstIn = 0;
-
-        function getFirstIn() {
-            firstIn += numBtnValue;
-            console.log(firstIn);
-        } getFirstIn();
-
-        
-        let operators = {
-            '+' : function (a,b) {return a + b;},
-            '-' : function (a,b) {return a - b;},
-            '*' : function (a,b) {return a * b;},
-            '/' : function (a,b) {return a / b;}, 
-            '%' : function (a) {return a / 100;} 
-        }
-
-        const add = document.querySelector('#add')
-        const equal = document.querySelector('#equals')
-
-        let firstInput;
-        let secondInput;
-        let finalInput;
-
-        add.addEventListener('click', function () {
-            let addition = '+';
-            // display.textContent = addition;
-            firstInput = first;
-            let operation = operators[addition]
-            console.log(operation);
-
-            equal.addEventListener('click', function() {
-                let secondInput = 10;
-                let operated = operation(firstInput, secondInput);
-                console.log(operated);
-            })
-        })
-
-        let addition = '+';
-
-        let addOperation = operators[addition](3,5)
-        // console.log(addOperation);
-
-
-
-
-
-        // Functions
-
-        
-
-
-
-
-
-
-    </script>
+    <script src="./script.js"></script>
 </body>
 </html>
