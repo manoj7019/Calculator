@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>My Calculator</h1>
+        <div class="">
+            <div>
+                <h1 id="displayArea"></h1>
+            </div>
+        </div>
+        <div class="panel">
+            <input id="reset" type="button" value="AC">
+            <input id="percentage" class="operatorBtn" type="button" value="%">
+            <input id="divide" class="operatorBtn" type="button" value="/">
+            <input id="backBtn" type="button" value="&#8678;">
+        </div>
+        <div class="panel">
+            <input id="seven" class="numBtn" type="button" value="7">
+            <input id="eight" class="numBtn" type="button" value="8">
+            <input id="nine" class="numBtn" type="button" value="9">
+            <input id="multiply" class="operatorBtn" type="button" value="*">
+        </div>
+        <div class="panel">
+            <input id="four" class="numBtn" type="button" value="4">
+            <input id="five" class="numBtn" type="button" value="5">
+            <input id="six" class="numBtn" type="button" value="6">
+            <input id="subtract" class="operatorBtn" type="button" value="-">
+        </div>
+        <div class="panel">
+            <input id="one" class="numBtn" type="button" value="1">
+            <input id="two" class="numBtn" type="button" value="2">
+            <input id="three" class="numBtn" type="button" value="3">
+            <input id="add" class="operatorBtn" type="button" value="+">
+        </div>
+        <div class="panel">
+            <input id="zero" class="numBtn" type="button" value="0">
+            <input id="dot" type="button" value=".">
+            <input id="equals" type="button" value="=">
+        </div>
+    </div>
+    <script>
+        const numBtns = document.querySelectorAll('.numBtn')
+
+        getNumValues();
+        console.log(firstInput);
+        
+        function getNumValues() {
+            for(let i=0; i<numBtns.length; i++) {
+                numBtnValue = numBtns[i].value;
+                console.log(numBtnValue);
+                firstInput = 'abcd'
+            }
+        }
+        
+        const operators = {
+            '+' : function(a,b) {return a + b},
+            '-' : function(a,b) {return a - b},
+            '*' : function(a,b) {return a * b},
+            '/' : function(a,b) {return a / b},
+            '%' : function(a) {return a / 100}
+        }
+
+        let firstNum;
+        let secondNum;
+
+        let addition = '+'
+        let addOperation = operators[addition](firstNum, secondNum);
+        // console.log(addOperation)
+
+        let subtraction = '-'
+        let subOperation = operators[subtraction](firstNum, secondNum);
+        // console.log(subOperation)
+
+        let multiplication = '*'
+        let multOperation = operators[multiplication](firstNum, secondNum);
+        // console.log(multOperation)
+
+        let division = '/'
+        let divOperation = operators[division](firstNum, secondNum);
+        // console.log(divOperation)
+
+        let percentage = '%'
+        let percentOperation = operators[percentage](firstNum);
+        // console.log(percentOperation)
+    </script>
+</body>
+</html>
